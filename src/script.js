@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
 import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
-// console.log("RectAreaLightHelper", RectAreaLightHelper);
+console.log("RectAreaLightHelper", RectAreaLightHelper);
 
 /**
  * Base
@@ -42,7 +42,7 @@ const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2);
 pointLight.position.set(1, -0.5, 1);
 scene.add(pointLight);
 
-const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 3, 1);
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 1, 1);
 rectAreaLight.position.set(-1.5, 0, 1.5);
 //rectangle light looking at the center of the scene
 rectAreaLight.lookAt(new THREE.Vector3());
