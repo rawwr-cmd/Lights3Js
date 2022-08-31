@@ -18,19 +18,32 @@ const scene = new THREE.Scene();
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-scene.add(ambientLight);
-
-const pointLight = new THREE.PointLight(0xffffff, 0.5);
-pointLight.position.x = 2;
-pointLight.position.y = 3;
-pointLight.position.z = 4;
-scene.add(pointLight);
 
 /** OBJECTS **/
 //  MATERIALS
 const material = new THREE.MeshStandardMaterial();
 material.roughness = 0.4;
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+// scene.add(ambientLight);
+
+// gui.add(ambientLight, "intensity").min(0).max(1).step(0.001);
+
+const directionalLight = new THREE.DirectionalLight(0x00fffc, 0.3);
+directionalLight.position.set(1, 0.25, 0);
+// scene.add(directionalLight);
+
+const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 0.3); //up, down, intensity
+// scene.add(hemisphereLight);
+
+const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2);
+pointLight.position.set(1, -0.5, 1);
+// scene.add(pointLight);
+
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 3, 1);
+scene.add(rectAreaLight);
+
+gui.add(rectAreaLight, "intensity").min(0).max(1).step(0.001);
 
 // new THREE.Mesh(Geometry, material);
 // Objects
