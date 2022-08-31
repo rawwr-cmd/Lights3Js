@@ -1,6 +1,5 @@
 # Three.js Journey
 
-## Deployed here [3dText](https://3d-web-dev-new-rawwr.vercel.app)
 
 ## Setup
 
