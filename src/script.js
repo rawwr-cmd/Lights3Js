@@ -44,11 +44,27 @@ const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 3, 1);
 rectAreaLight.position.set(-1.5, 0, 1.5);
 //rectangle light looking at the center of the scene
 rectAreaLight.lookAt(new THREE.Vector3());
-
 scene.add(rectAreaLight);
 
 //it works only with mesh standard material and mesh physical material
 gui.add(rectAreaLight, "intensity").min(0).max(1).step(0.001);
+
+const spotLight = new THREE.SpotLight(
+  0x78ff00,
+  0.5,
+  6, //fading with the distance
+  Math.PI * 0.1, //angle
+  0.25, //pinumbra (edges of the light))
+  1 //Decay to have the light strength decrease gradually from the light source to the end of the Range.
+);
+spotLight.position.set(0, 2, 3);
+scene.add(spotLight);
+
+// console.log(spotLight);
+//(comment the below out to centre out the spot light)
+//to postion x axis
+spotLight.target.position.x = -0.75;
+scene.add(spotLight.target);
 
 // new THREE.Mesh(Geometry, material);
 // Objects
