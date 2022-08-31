@@ -2,6 +2,8 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
+import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
+// console.log("RectAreaLightHelper", RectAreaLightHelper);
 
 /**
  * Base
@@ -65,6 +67,40 @@ scene.add(spotLight);
 //to postion x axis
 spotLight.target.position.x = -0.75;
 scene.add(spotLight.target);
+
+//HELPERS
+
+// const hemisphereLightHelper = new THREE.HemisphereLightHelper(
+//   hemisphereLight,
+//   0.2
+// );
+// scene.add(hemisphereLightHelper);
+
+// const directionalLightHelper = new THREE.DirectionalLightHelper(
+//   directionalLight,
+//   0.2
+// );
+// scene.add(directionalLightHelper);
+
+// const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
+// scene.add(pointLightHelper);
+
+// const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+// scene.add(spotLightHelper);
+
+// const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight);
+// scene.add(rectAreaLightHelper);
+
+// //updating in the next frame
+// window.requestAnimationFrame(() => {
+//   spotLightHelper.update();
+
+//   rectAreaLightHelper.position.copy(rectAreaLight.position);
+//   // rectAreaLightHelper.position.x = rectAreaLight.position.x;
+//   // rectAreaLightHelper.position.y = rectAreaLight.position.y;
+//   // rectAreaLightHelper.position.z = rectAreaLight.position.z;
+//   rectAreaLightHelper.update();
+// });
 
 // new THREE.Mesh(Geometry, material);
 // Objects
